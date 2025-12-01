@@ -1,0 +1,66 @@
+= FreeSpace 2
+:toc:
+:sectnums:
+ifndef::env-github[:icons: font]
+:note-caption: :paperclip:
+:important-caption: :exclamation:
+:warning-caption: :warning:
+
+[IMPORTANT]
+====
+The commits in this branch are highly unstable. I rebase and force push at will.
+
+The history may be rewritten without notice.
+====
+
+== FreeSpace2 Source Code Project
+
+https://github.com/scp-fs2open/fs2open.github.com
+
+=== Submodules
+
+[source, shell]
+----
+ ❯ git submodule update --init --recursive
+
+ ❯ git submodule 
+ 7cef9577d6fc35057ea57f46b4986a8a28aeff50 cmake/external/rpavlik-cmake-modules (7cef957)
+ ae8a8d98ae4801e6539ceeda377bb03028ce3334 lib/libRocket (issue-137-165-gae8a8d9)
+
+ ❯ grep path .gitmodules | sed 's/.*= //'
+cmake/external/rpavlik-cmake-modules
+lib/libRocket
+
+❯ git config --list|egrep ^submodule
+
+submodule.active=.
+submodule.cmake/external/rpavlik-cmake-modules.url=https://github.com/rpavlik/cmake-modules.git
+submodule.lib/libRocket.url=https://github.com/scp-fs2open/libRocket.git
+
+❯ git ls-files --stage | grep 160000
+160000 7cef9577d6fc35057ea57f46b4986a8a28aeff50 0       cmake/external/rpavlik-cmake-modules
+160000 ae8a8d98ae4801e6539ceeda377bb03028ce3334 0       lib/libRocket
+
+❯ git submodule foreach --quiet 'echo $name'
+cmake/external/rpavlik-cmake-modules
+lib/libRocket
+
+❯ cat .gitmodules
+───────┬────────────────────────────────────────────────────────────────────────
+       │ File: .gitmodules
+───────┼────────────────────────────────────────────────────────────────────────
+   1   │ [submodule "cmake/external/rpavlik-cmake-modules"]
+   2   │     path = cmake/external/rpavlik-cmake-modules
+   3   │     url = https://github.com/rpavlik/cmake-modules.git
+   4   │ [submodule "lib/libRocket"]
+   5   │     path = lib/libRocket
+   6   │     url = https://github.com/scp-fs2open/libRocket.git
+───────┴────────────────────────────────────────────────────────────────────────
+
+
+
+----
+
+== GOG
+
+https://www.gog.com/de/game/freespace_2
