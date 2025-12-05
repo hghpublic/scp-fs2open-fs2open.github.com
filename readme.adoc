@@ -8,8 +8,10 @@ ifndef::env-github[:icons: font]
 
 [IMPORTANT]
 ====
-The commits in this branch are highly unstable. I rebase and force push at will.
-
+The commit history of this branch is volatile. +
+Rebasing and force pushing happens at will. +
+The commits in this branch mostly collect changes in a restricted area of code. +
+They rarely document code evolution. +
 The history may be rewritten without notice.
 ====
 
